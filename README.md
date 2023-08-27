@@ -1,5 +1,5 @@
 # spring-webflux-learn
-在学习spring cloud gateway的时候想写个API的时候可完全看不懂，原来使用的是spring webFlux 和 reactor 的技术，现在来学习这两项技术。
+在学习spring cloud gateway的时候想写个API的时候但是完全看不懂，使用的是spring webFlux 和 reactor 的技术，现在来学习这两项技术。
 
 #  Reactor
 ## Reactor 是什么？
@@ -31,18 +31,60 @@ Reactor编程范式 是一种异步编程范式，涉及数据流和变化的传
 Callback存在CallbackHell的问题，
 Future 虽然有CompletableFuture 提供了较好的API，但是它的API还不够全，不支持 延迟计算，多个值和高级错误处理。
 
+## Reactive Stream Specification
+### Publisher
+```java
+public interface Publisher<T> {
+    public void subscribe(Subscriber<? super T> s);
+}
+```
+### Subscriber
+```java
+public interface Subscriber<T> {
+    
+    public void onSubscribe(Subscription s);
+  
+    public void onNext(T t);
+   
+    public void onError(Throwable t);
+   
+    public void onComplete();
+}
 
 
-## Reactor Specific
+```
+### Subscription
+```java
+public interface Subscription {
+    
+    public void request(long n);
 
+    public void cancel();
+}
+```
+### Processor
+```java
+public interface Processor<T, R> extends Subscriber<T>, Publisher<R> {
+}
+
+```
 ## Reactor API
 
 ### Flux
+> A Flux<T> is a standard Publisher<T> that represents an asynchronous sequence of 0 to N emitted items, optionally terminated by either a completion signal or an error. 
+
+![flux](https://projectreactor.io/docs/core/release/reference/images/flux.svg)
 
 ### Mono
- 
+
+> A Mono<T> is a specialized Publisher<T> that emits at most one item via the onNext signal then terminates with an onComplete signal (successful Mono, with or without value), or only emits a single onError signal (failed Mono).
+
+![mono](https://projectreactor.io/docs/core/release/reference/images/mono.svg)
+
 ### Creating a New Sequence
 
+- [CreateFluxTest](src/test/java/com/daxiyan/study/CreateFluxTest.java)
+- [CreateMonoTest](src/test/java/com/daxiyan/study/CreateMonoTest.java)
 ### Transforming an Existing Sequence 
 
 ### Peeking into a Sequence（窥视序列）
