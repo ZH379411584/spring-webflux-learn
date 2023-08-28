@@ -88,10 +88,12 @@ public interface Processor<T, R> extends Subscriber<T>, Publisher<R> {
 ### Transforming an Existing Sequence 
 
 
-- [TransformMonoTest](src/test/java/com/daxiyan/study/TransformMonoTest.java) 
-- [CreateMonoTest](src/test/java/com/daxiyan/study/TransformFluxTest.java) 
+- [TransformMonoTest](src/test/java/com/daxiyan/study/TransformMonoTest.java)  
+- [TransformFluxTest](src/test/java/com/daxiyan/study/TransformFluxTest.java) 
 ### Peeking into a Sequence（窥视序列）
 
+- [PeekMonoTest](src/test/java/com/daxiyan/study/PeekMonoTest.java) 
+- [PeekFluxTest](src/test/java/com/daxiyan/study/PeekFluxTest.java)
 ### Filtering a Sequence
 
 ### Handling Errors

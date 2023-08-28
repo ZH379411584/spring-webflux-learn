@@ -187,7 +187,7 @@ public class TransformFluxTest {
 
 
     @Test
-    public void contact() {
+    public void concatWith() {
         Flux<Integer> flux = Flux.just(3, 2, 1).concatWith(Flux.just(1, 2, 3));
         StepVerifier.create(flux)
                 .expectNext(3, 2, 1, 1, 2, 3)
