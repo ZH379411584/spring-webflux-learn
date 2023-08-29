@@ -95,7 +95,8 @@ public interface Processor<T, R> extends Subscriber<T>, Publisher<R> {
 - [PeekMonoTest](src/test/java/com/daxiyan/study/PeekMonoTest.java) 
 - [PeekFluxTest](src/test/java/com/daxiyan/study/PeekFluxTest.java)
 ### Filtering a Sequence
-
+- [FilterFluxTest](src/test/java/com/daxiyan/study/FilterFluxTest.java) 
+- [FilterMonoTest](src/test/java/com/daxiyan/study/FilterMonoTest.java)
 ### Handling Errors
 
 ### Working with Time
