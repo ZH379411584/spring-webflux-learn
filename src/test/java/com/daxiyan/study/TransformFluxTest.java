@@ -232,6 +232,14 @@ public class TransformFluxTest {
 
 
     }
+    @Test
+    public void concatMap()
+    {
+        Flux.just(5, 10)
+                .concatMap(x -> Flux.range(x * 10, 100).take(x))
+                .toStream()
+                .forEach(System.out::println);
+    }
 
 
 }

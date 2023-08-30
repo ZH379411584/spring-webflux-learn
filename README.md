@@ -98,6 +98,7 @@ public interface Processor<T, R> extends Subscriber<T>, Publisher<R> {
 - [FilterFluxTest](src/test/java/com/daxiyan/study/FilterFluxTest.java) 
 - [FilterMonoTest](src/test/java/com/daxiyan/study/FilterMonoTest.java)
 ### Handling Errors
+[HandleErrorFluxAndMonoTest](src/test/java/com/daxiyan/study/HandleErrorFluxAndMonoTest.java)
 
 ### Working with Time
 
